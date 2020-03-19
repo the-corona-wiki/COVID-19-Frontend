@@ -1,0 +1,66 @@
+.homeContainer {
+  width: 98vw;
+  height: 100vh;
+  margin: 0 1vw 0 1vw;
+  display: grid;
+  grid-template-columns: 1fr 4fr 7fr 1fr;
+  grid-template-rows: 1fr 4fr 7fr;
+  grid-template-areas:
+    "t t t t"
+    ". l m ."
+    ". n m .";
+  grid-gap: 5px;
+}
+
+.map {
+  border: 1px solid black;
+  grid-area: m;
+}
+
+.news {
+  grid-area: n;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: scroll;
+  background: var(--light-background);
+  border-radius: 10px;
+}
+
+.news span {
+  color: var(--gray-text);
+  font-weight: 550;
+}
+
+.redBadge {
+  width: max-content;
+  padding: 5px 15px 5px 15px;
+  margin: 5px;
+  font-size: 1.5em;
+  background: var(--red-badge);
+  color: var(--light-text);
+  border-radius: 5px;
+}
+
+.links {
+  grid-area: l;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.links>button {
+  padding: 25px 10px 25px 10px;
+  background: var(--main-accent);
+  color: var(--light-text);
+  border-radius: 5px;
+  border: none;
+  height: max-content;
+  font-size: 1.3em;
+}
+
+.nav {
+  border: 1px solid black;
+  grid-area: t;
+}

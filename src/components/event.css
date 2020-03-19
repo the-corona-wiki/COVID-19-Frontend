@@ -1,0 +1,33 @@
+.event>h5 {
+  color: var(--secondary-text);
+  margin: 5px 0 5px 0;
+  font-size: 1em;
+  font-weight: 450;
+  position: relative;
+  right: 10px;
+}
+
+.event>h5::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: red;
+  position: relative;
+  right: 5px;
+}
+
+.event>h4 {
+  color: var(--dark-text);
+  margin: 0;
+  font-size: 1.3em;
+  padding-left: 10px;
+  position: relative;
+  right: 10px;
+  border-left: dotted 1px gray;
+}
+
+.event {
+  padding-left: 15px;
+}
