@@ -7,11 +7,7 @@ class Timeline extends Component {
     super(props);
     this.state = {
       isLoaded: true,
-      items: [
-        { id: 1, date: '3/12/20', confirmed: 10, deaths: 10, recovered: 10 },
-        { id: 2, date: '3/13/20', confirmed: 20, deaths: 20, recovered: 20 },
-        { id: 3, date: '3/14/20', confirmed: 30, deaths: 30, recovered: 30 }
-      ]
+      items: []
     };
   }
 
