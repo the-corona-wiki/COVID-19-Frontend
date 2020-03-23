@@ -1,0 +1,30 @@
+.statContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 25px;
+  background: var(--dark-background);
+  color: var(--light-text);
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: .8em;
+  text-align: center;
+}
+
+.confirmed {
+  color: var(--danger);
+  font-size: 2.7rem;
+}
+
+.deaths {
+  color: var(--light-text);
+  font-size: 2.7rem;
+}
+
+.recovered {
+  color: var(--green);
+  font-size: 2.7rem;
+}

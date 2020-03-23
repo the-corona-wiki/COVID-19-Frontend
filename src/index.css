@@ -18,8 +18,10 @@ html {
   --secondary-text: rgb(105, 105, 105);
   --dark-text: black;
   --light-background: rgb(220, 220, 220);
-  --dark-background: blue;
+  --dark-background: rgb(43, 43, 43);
   --red-badge: red;
   --main-accent: rgb(69, 189, 236);
   --backdrop: rgb(240, 240, 240);
+  --danger: rgb(221, 37, 37);
+  --green: rgb(44, 182, 44);
 }

@@ -1,13 +1,30 @@
 import React, { Component } from 'react';
 import './Home.css';
-import Event from '../components/event';
+import Event from '../components/Event/event';
 import Timeline from '../components/Timeline';
+import Map from '../components/Map/map'
+// import NET from '../scripts/vanta.net.min'
+// import * as THREE from 'three'
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = { mainView: 'timeline' };
+    // this.ref = React.createRef()
   }
+
+  // componentDidMount() {
+  //   this.vantaEffect = NET({
+  //     el: this.ref.current,
+  //     THREE: THREE
+  //   })
+  // }
+
+  // componentWillUnmount() {
+  //   if (this.vantaEffect) {
+  //     this.vantaEffect.destroy()
+  //   }
+  // }
 
   onTimelineClick = () => {
     const { mainView } = this.state;
@@ -25,19 +42,14 @@ class Home extends Component {
 
   render() {
     return (
+      // <div className="homeContainer" ref={this.ref}>
       <div className="homeContainer">
         <div className="nav">
-          <a onClick={this.onTimelineClick} className="nav-btn">
-            Timeline
-          </a>
-          <a onClick={this.onMapClick} className="nav-btn">
-            Map
-          </a>
         </div>
         <div className="links">
           <button>What is Coronavirus</button>
-          <button>News Articles</button>
-          <button>Live Updates</button>
+          <button onClick={this.onTimelineClick}>Timeline</button>
+          <button onClick={this.onMapClick}>Live Case Map</button>
         </div>
         <div className="news">
           <div>
@@ -59,7 +71,7 @@ class Home extends Component {
         </div>
         <div className="map">
           {this.state.mainView === 'timeline' && <Timeline />}
-          {this.state.mainView === 'map' && <iframe frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" title="2019-nCoV" src="http://gisanddata.maps.arcgis.com/apps/Embed/index.html%3Fwebmap=14aa9e5660cf42b5b4b546dec6ceec7c&amp;extent=77.3846,11.535,163.5174,52.8632&amp;zoom=true&amp;previewImage=false&amp;scale=true&amp;disable_scroll=true&amp;theme=light" />}
+          {this.state.mainView === 'map' && <Map />}
         </div>
       </div>
     );
