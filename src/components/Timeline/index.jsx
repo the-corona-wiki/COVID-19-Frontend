@@ -15,24 +15,24 @@ class Timeline extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   // fetch('http://localhost:5000/v2/total')
-  //   fetch('https://coronavirus-tracker-api.herokuapp.com/v2/total', {
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       Accept: 'application/json'
-  //     }
-  //   })
-  //     .then(res => res.json())
-  //     .then(json => {
-  //       console.log('Recived JSON Data');
-  //       console.log(json);
-  //       this.setState({
-  //         items: json['total'],
-  //         isLoaded: true
-  //       });
-  //     });
-  // }
+  componentDidMount() {
+    // fetch('http://localhost:5000/v2/total')
+    fetch('https://covid19-wiki-api.herokuapp.com/v2/total', {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      }
+    })
+      .then(res => res.json())
+      .then(json => {
+        console.log('Recived JSON Data');
+        console.log(json);
+        this.setState({
+          items: json['total'],
+          isLoaded: true
+        });
+      });
+  }
 
   render() {
     let { items, isLoaded } = this.state;

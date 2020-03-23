@@ -28,14 +28,14 @@ class Home extends Component {
 
   onTimelineClick = () => {
     const { mainView } = this.state;
-    if (mainView != 'timeline') {
+    if (mainView !== 'timeline') {
       this.setState({ mainView: 'timeline' });
     }
   };
 
   onMapClick = () => {
     const { mainView } = this.state;
-    if (mainView != 'map') {
+    if (mainView !== 'map') {
       this.setState({ mainView: 'map' });
     }
   };
