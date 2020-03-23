@@ -19,7 +19,10 @@ class Map extends Component {
     })
       .then(res => res.json())
       .then(res => {
-        const { confirmed, deaths, recovered } = res.total[res.total.length - 1]
+        let { confirmed, deaths, recovered } = res.total[res.total.length - 1]
+        confirmed = confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        deaths = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        recovered = recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         this.setState({ confirmed, deaths, recovered })
       })
   }
