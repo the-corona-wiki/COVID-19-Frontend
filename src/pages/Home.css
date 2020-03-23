@@ -6,15 +6,16 @@
   grid-template-columns: 1fr 4fr 7fr 1fr;
   grid-template-rows: 1fr 4fr 7fr;
   grid-template-areas:
-    "t t t t"
-    ". l m ."
-    ". n m .";
+    't t t t'
+    '. l m .'
+    '. n m .';
   grid-gap: 5px;
 }
 
 .map {
   border: 1px solid black;
   grid-area: m;
+  overflow-y: scroll;
 }
 
 .news {
@@ -50,7 +51,7 @@
   justify-content: space-around;
 }
 
-.links>button {
+.links > button {
   padding: 25px 10px 25px 10px;
   background: var(--main-accent);
   color: var(--light-text);
@@ -63,4 +64,26 @@
 .nav {
   border: 1px solid black;
   grid-area: t;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.nav-btn {
+  width: 5rem;
+  height: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+
+  padding: 0.5rem 0;
+  background-color: var(--main-accent);
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
