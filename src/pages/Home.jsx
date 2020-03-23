@@ -45,6 +45,7 @@ class Home extends Component {
       // <div className="homeContainer" ref={this.ref}>
       <div className="homeContainer">
         <div className="nav">
+          <h1>COVID-19 Wiki</h1>
         </div>
         <div className="links">
           <button>What is Coronavirus</button>
