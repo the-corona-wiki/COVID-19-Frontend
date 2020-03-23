@@ -31,7 +31,7 @@ class Map extends Component {
     const { confirmed, deaths, recovered } = this.state
     return (
       <React.Fragment>
-        <iframe frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" title="2019-nCoV" src="http://gisanddata.maps.arcgis.com/apps/Embed/index.html%3Fwebmap=14aa9e5660cf42b5b4b546dec6ceec7c&amp;extent=77.3846,11.535,163.5174,52.8632&amp;zoom=true&amp;previewImage=false&amp;scale=true&amp;disable_scroll=true&amp;theme=light" />
+        <iframe frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" title="2019-nCoV" src="https://gisanddata.maps.arcgis.com/apps/Embed/index.html%3Fwebmap=14aa9e5660cf42b5b4b546dec6ceec7c&amp;extent=77.3846,11.535,163.5174,52.8632&amp;zoom=true&amp;previewImage=false&amp;scale=true&amp;disable_scroll=true&amp;theme=light" />
         <div className='statContainer'>
           <div className='stats'>
             <h4>Toal Confirmed Cases</h4>
