@@ -38,7 +38,7 @@ class Timeline extends Component {
     } else {
       return (
         <VerticalTimeline className="vertial-timeline">
-          {items.map(item => {
+          {items.reverse().map(item => {
             return (
               <VerticalTimelineElement
                 key={item.id}
