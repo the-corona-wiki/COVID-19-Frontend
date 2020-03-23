@@ -17,8 +17,9 @@ html {
   --gray-text: rgb(63, 63, 63);
   --secondary-text: rgb(105, 105, 105);
   --dark-text: black;
-  --light-background: rgb(240, 240, 240);
+  --light-background: rgb(220, 220, 220);
   --dark-background: blue;
   --red-badge: red;
   --main-accent: rgb(69, 189, 236);
+  --backdrop: rgb(240, 240, 240);
 }
