@@ -1,0 +1,32 @@
+.factBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.factBox > h2, .factBox > ul {
+  width: 35%;
+  text-align: center;
+}
+
+.factBox > h2 {
+  font-size: 1.8em;
+}
+
+.factBox li {
+  margin-top: 15px;
+  font-size: 1.3em;
+}
+
+.factContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  height: 80%;
+}
+
+.factContainer > h1 {
+  font-size: 2.7em;
+  margin: auto;
+}

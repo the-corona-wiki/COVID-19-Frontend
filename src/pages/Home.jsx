@@ -3,13 +3,14 @@ import './Home.css';
 import Event from '../components/Event/event';
 import Timeline from '../components/Timeline';
 import Map from '../components/Map/map'
+import Facts from '../components/Facts/facts'
 // import NET from '../scripts/vanta.net.min'
 // import * as THREE from 'three'
 
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { mainView: 'timeline' };
+    this.state = { mainView: 'facts' };
     // this.ref = React.createRef()
   }
 
@@ -26,19 +27,27 @@ class Home extends Component {
   //   }
   // }
 
-  onTimelineClick = () => {
+  onTimelineClick() {
     const { mainView } = this.state;
     if (mainView !== 'timeline') {
       this.setState({ mainView: 'timeline' });
     }
   };
 
-  onMapClick = () => {
+  onMapClick() {
     const { mainView } = this.state;
     if (mainView !== 'map') {
       this.setState({ mainView: 'map' });
     }
   };
+
+  onFactClick() {
+    const { mainView } = this.state
+    if (mainView !== 'facts') {
+      this.setState({ mainView: 'facts' })
+    }
+  }
+
 
   render() {
     return (
@@ -48,9 +57,9 @@ class Home extends Component {
           <h1>COVID-19 Wiki</h1>
         </div>
         <div className="links">
-          <button>What is Coronavirus</button>
-          <button onClick={this.onTimelineClick}>Timeline</button>
-          <button onClick={this.onMapClick}>Live Case Map</button>
+          <button onClick={() => this.onFactClick()}>What is Coronavirus</button>
+          <button onClick={() => this.onTimelineClick()}>Timeline</button>
+          <button onClick={() => this.onMapClick()}>Live Case Map</button>
         </div>
         <div className="news">
           <div>
@@ -73,6 +82,7 @@ class Home extends Component {
         <div className="map">
           {this.state.mainView === 'timeline' && <Timeline />}
           {this.state.mainView === 'map' && <Map />}
+          {this.state.mainView === 'facts' && <Facts />}
         </div>
       </div>
     );
