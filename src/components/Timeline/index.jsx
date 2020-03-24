@@ -20,13 +20,42 @@ class Timeline extends Component {
       }
     })
       .then(res => res.json())
-      .then(json => {
-        console.log('Recived JSON Data');
-        console.log(json);
-        this.setState({
-          items: json['total'],
-          isLoaded: true
-        });
+      .then(statsJSON => {
+        fetch('http://api-go-article.herokuapp.com/all', {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          }
+        })
+          .then(res => res.json())
+          .then(async articleJSON => {
+            const days = [];
+            await statsJSON['total'].forEach(day => {
+              // Reformat the statsDate to match the articleDate
+              const formmattedDate = [];
+              var date = day.date.split('/');
+              formmattedDate.push('20' + date[2]);
+              formmattedDate.push(date[0].length > 1 ? date[0] : '0' + date[0]);
+              formmattedDate.push(date[1].length > 1 ? date[1] : '0' + date[1]);
+              date = formmattedDate.join('');
+
+              // Loop through articleJSON at date and append the needed info to days new article array
+              days.articles = [];
+              articleJSON[date].forEach(article => {
+                const articleData = {};
+                articleData.title = article['title'];
+                articleData.url = article['url'];
+                articleData.abstract = article['abstract'];
+                days.articles.push(articleData);
+              });
+              // Push the updated day object to the days array
+              days.push(day);
+            });
+            this.setState({
+              items: days,
+              isLoaded: true
+            });
+          });
       });
   }
 
@@ -60,18 +89,16 @@ class Timeline extends Component {
                 <h3 className="vertical-timeline-element-title">
                   <u>WHAT HAPPEND ON THIS DAY?</u>
                 </h3>
-                <p>
-                  [summary point 1] Lorem ipsum dolor sit amet, consectetur do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua.
-                </p>
-                <p>
-                  [summary point 2] Lorem ipsum dolor sit a adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua.
-                </p>
-                <p>
-                  [summary point 3] Lorem ipsum dolor sit amet, consectetur do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua.
-                </p>
+                {item.articles.map(article => {
+                  return (
+                    <div className="article-card">
+                      <h4>
+                        <a href={article.url}>{article.title}</a>
+                      </h4>
+                      <p>{article.abstract}</p>
+                    </div>
+                  );
+                })}
               </VerticalTimelineElement>
             );
           })}
